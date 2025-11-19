@@ -1,4 +1,4 @@
-package pages.testCase;
+package testCase1;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -37,4 +37,5 @@ public class LoginTest extends BaseTest {
             cust.clickSaveBtn();
         }
     }
+
 
