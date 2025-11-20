@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
             CustomerPage cust=new CustomerPage(driver);
             cust.clickMycust();
             cust.clickNewCust();
-            cust.clickAndAddLead("AA123");
+            cust.clickAndAddLead("Nikhil");
             cust.clickSaveBtn();
         }
     }
