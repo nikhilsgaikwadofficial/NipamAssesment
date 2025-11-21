@@ -1,14 +1,46 @@
 {
 	"info": {
-		"_postman_id": "a5c5dcfa-9c07-4b65-bbeb-846d464c18a0",
+		"_postman_id": "d81e2a4b-99c3-4f32-9fd7-d5e9b6dbcc02",
 		"name": "Nimap_Infotech",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "49371339",
-		"_collection_link": "https://nikhilsgaikwad9820-1693994.postman.co/workspace/myworkspace~f7ed6926-07ba-409d-a31a-6cb7c48aed81/collection/49371339-a5c5dcfa-9c07-4b65-bbeb-846d464c18a0?action=share&source=collection_link&creator=49371339"
+		"_exporter_id": "36185635"
 	},
 	"item": [
 		{
 			"name": "Get_Req",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"Base_url\", \"https://testffc.nimapinfotech.com\");\r",
+							"pm.environment.set(\"userid\",\"9519519519\");\r",
+							"pm.environment.set(\"password\", \"12345678\");\r",
+							"pm.environment.set(\"token\", \"qewysddiwuewnqweiwemwdowemew\");"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Content-Type is text/html\", () => {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/html\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -23,6 +55,24 @@
 		},
 		{
 			"name": "valid_post_Req",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Content-Type is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -39,12 +89,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://testffc.nimapinfotech.com/api/account/authenticate",
-					"protocol": "https",
+					"raw": "{{Base_url}}/api/account/authenticate",
 					"host": [
-						"testffc",
-						"nimapinfotech",
-						"com"
+						"{{Base_url}}"
 					],
 					"path": [
 						"api",
@@ -57,6 +104,29 @@
 		},
 		{
 			"name": "invalid_post_Req",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 401\", ()=>{\r",
+							"    pm.response.to.have.status(401);\r",
+							"})\r",
+							" var data= pm.response.json();\r",
+							" pm.test(\"Success value should be false\", function () {\r",
+							"    pm.expect(data.success).to.eql(false);\r",
+							"});\r",
+							"pm.test(\"Content-Type is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -73,12 +143,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://testffc.nimapinfotech.com/api/account/authenticate",
-					"protocol": "https",
+					"raw": "{{Base_url}}/api/account/authenticate",
 					"host": [
-						"testffc",
-						"nimapinfotech",
-						"com"
+						"{{Base_url}}"
 					],
 					"path": [
 						"api",
@@ -91,6 +158,24 @@
 		},
 		{
 			"name": "addCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Content-Type is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -119,12 +204,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://testffc.nimapinfotech.com/api/CRM/AddLead",
-					"protocol": "https",
+					"raw": "{{Base_url}}/api/CRM/AddLead",
 					"host": [
-						"testffc",
-						"nimapinfotech",
-						"com"
+						"{{Base_url}}"
 					],
 					"path": [
 						"api",
@@ -134,6 +216,30 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

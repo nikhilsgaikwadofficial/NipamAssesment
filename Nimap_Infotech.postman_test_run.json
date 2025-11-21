@@ -1,0 +1,176 @@
+{
+	"id": "44d0d4b7-4bae-4a41-8b30-ed869a05306c",
+	"name": "Nimap_Infotech",
+	"timestamp": "2025-11-21T07:54:20.721Z",
+	"collection_id": "36185635-d81e2a4b-99c3-4f32-9fd7-d5e9b6dbcc02",
+	"folder_id": 0,
+	"environment_id": "36185635-5aeeefc1-689a-4b9b-a2bb-6d3bbb8d72ee",
+	"totalPass": 8,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-11-21T07:54:16.465Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "3f8a34d7-5c5c-4999-9890-23dcfd07da26",
+			"name": "Get_Req",
+			"url": "https://testffc.nimapinfotech.com",
+			"time": 751,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"status code is 200": true,
+				"Content-Type is text/html": true
+			},
+			"testPassFailCounts": {
+				"status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is text/html": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				751
+			],
+			"allTests": [
+				{
+					"status code is 200": true,
+					"Content-Type is text/html": true
+				}
+			]
+		},
+		{
+			"id": "d19fdf00-75b9-48ce-9a89-f0cbb2ad48b7",
+			"name": "valid_post_Req",
+			"url": "https://testffc.nimapinfotech.com/api/account/authenticate",
+			"time": 289,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"status code is 200": true,
+				"Content-Type is application/json": true
+			},
+			"testPassFailCounts": {
+				"status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				289
+			],
+			"allTests": [
+				{
+					"status code is 200": true,
+					"Content-Type is application/json": true
+				}
+			]
+		},
+		{
+			"id": "6199dfa0-649e-474a-a8ce-ebe59ec3eb68",
+			"name": "invalid_post_Req",
+			"url": "https://testffc.nimapinfotech.com/api/account/authenticate",
+			"time": 167,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"status code is 401": false,
+				"Success value should be false": true,
+				"Content-Type is application/json": true
+			},
+			"testPassFailCounts": {
+				"status code is 401": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Success value should be false": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				167
+			],
+			"allTests": [
+				{
+					"status code is 401": false,
+					"Success value should be false": true,
+					"Content-Type is application/json": true
+				}
+			]
+		},
+		{
+			"id": "522cb45f-775e-4aa2-a44c-ef2ac03deff7",
+			"name": "addCustomer",
+			"url": "https://testffc.nimapinfotech.com/api/CRM/AddLead",
+			"time": 456,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"status code is 200": true,
+				"Content-Type is application/json": true
+			},
+			"testPassFailCounts": {
+				"status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				456
+			],
+			"allTests": [
+				{
+					"status code is 200": true,
+					"Content-Type is application/json": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1663,
+	"collection": {
+		"requests": [
+			{
+				"id": "3f8a34d7-5c5c-4999-9890-23dcfd07da26",
+				"method": "GET"
+			},
+			{
+				"id": "d19fdf00-75b9-48ce-9a89-f0cbb2ad48b7",
+				"method": "POST"
+			},
+			{
+				"id": "6199dfa0-649e-474a-a8ce-ebe59ec3eb68",
+				"method": "POST"
+			},
+			{
+				"id": "522cb45f-775e-4aa2-a44c-ef2ac03deff7",
+				"method": "POST"
+			}
+		]
+	}
+}
